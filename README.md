@@ -108,15 +108,9 @@ Google Drive Video Link:
 https://drive.google.com/file/d/1F4T_IKW39_ml8LmQzJ6jYsDtTOtYuTJi/view?usp=drivesdkC
 
 ---
-
-## 👤 Author Details
-Name: Nitin Bansiya  
-Project: AutoJudge – Programming Problem Difficulty Predictor  
-Year / Course: B.Tech 3rd Year  
-Institute: Indian Institute of Technology (IIT)  
-Email: (optional)
-
----
+## Project report
+Google Drive Pdf Link:
+https://drive.google.com/file/d/1WLgH-NlSglhaWN2C4_GILWOGqfM_xJdq/view?usp=drivesdk
 
 ## 📝 Notes
 - The project runs locally without hosting
