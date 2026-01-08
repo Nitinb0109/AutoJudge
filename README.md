@@ -1,102 +1,124 @@
 # AutoJudge – Programming Problem Difficulty Predictor
+AutoJudge is a machine learning system that predicts the difficulty of competitive programming problems using only their textual description.
 
-AutoJudge is a machine learning project that predicts the difficulty of programming problems
-using only their textual description.
-
-The system predicts:
-- Difficulty Class: Easy / Medium / Hard
-- Difficulty Score: Numerical value
+It performs two tasks:
+- Difficulty Classification → Easy / Medium / Hard
+- Difficulty Regression → Numerical difficulty score
 
 ---
 
-## Dataset
-
+## 🧾 Dataset
 This project uses the TaskComplexityEval-24 dataset.
-The dataset contains programming problems with difficulty labels and scores.
 
-Each problem includes:
+Each problem contains:
 - title
 - description
 - input_description
 - output_description
-- problem_class
-- problem_score
+- problem_class (Easy / Medium / Hard)
+- problem_score (Numeric)
 
-The dataset was originally in JSONL format and converted to CSV using a preprocessing script.
+The original dataset was in JSONL format and converted to CSV using a preprocessing script.
 
 ---
 
-## Features
-
+## 🧠 Approach & Models Used
+Feature Engineering:
 - Combined text (title + description + input + output)
-- TF-IDF features
-- Text length
-- Word count
+- TF-IDF vectorization
+- Text length features
 - Keyword frequency
 
----
-
-## Models
-
-Classification Model:
-- Logistic Regression
-- Predicts Easy / Medium / Hard
-
-Regression Model:
-- Random Forest Regressor
-- Predicts numerical difficulty score
+Models Used:
+- Classification → Logistic Regression
+- Regression → Random Forest Regressor
 
 ---
 
-## Evaluation
+## 📊 Evaluation Metrics & Results
+Classification Results:
+- Accuracy: 0.47
+- Confusion Matrix:
+[[ 28  75  50]
+ [ 12 294  83]
+ [ 17 196  68]]
 
-Classification:
-- Accuracy
-- Confusion Matrix
-
-Regression:
-- MAE
-- RMSE
-
----
-
-## Web Interface
-
-A Streamlit web app allows users to enter a problem description and get:
-- Predicted difficulty class
-- Predicted difficulty score
+Regression Results:
+- MAE: 1.714
+- RMSE: 2.052
 
 ---
 
-## How to Run
+## 🌐 Web Interface
+A Streamlit web app allows users to paste a new problem description and receive:
+✔ Predicted difficulty class  
+✔ Predicted difficulty score  
 
-Install dependencies:
+User Inputs:
+- Problem Title
+- Problem Description
+- Input Format
+- Output Format
+
+Outputs:
+- Difficulty Class
+- Difficulty Score
+
+---
+
+## 🚀 How to Run Locally
+1. Install dependencies:
 pip install -r requirements.txt
 
-Run preprocessing:
+2. Run preprocessing:
 python src/preprocess.py
 
-Train models:
+3. Train models:
 python src/train_classifier.py
 python src/train_regressor.py
 
-Run web app:
+4. Run the web app:
 streamlit run app.py
 
 ---
 
-## Project Structure
-
+## 📁 Project Structure
 AutoJudge/
-- data/
-- models/
-- src/
-- app.py
-- requirements.txt
-- README.md
+├── data/
+│   ├── problems_data.jsonl
+│   └── problems.csv
+├── models/
+│   ├── classifier.pkl
+│   ├── regressor.pkl
+│   ├── tfidf_vectorizer.pkl
+│   └── tfidf_vectorizer_reg.pkl
+├── src/
+│   ├── preprocess.py
+│   ├── train_classifier.py
+│   ├── train_regressor.py
+│   └── features.py
+├── app.py
+├── requirements.txt
+└── README.md
 
 ---
 
-## Author
+## 🎥 Demo Video (Mandatory)
+Google Drive Video Link:
+https://drive.google.com/file/d/1F4T_IKW39_ml8LmQzJ6jYsDtTOtYuTJi/view?usp=drivesdkC
 
-Nitin Bansiya
+---
+
+## 👤 Author Details
+Name: Nitin Bansiya  
+Project: AutoJudge – Programming Problem Difficulty Predictor  
+Year / Course: B.Tech 3rd Year  
+Institute: Indian Institute of Technology (IIT)  
+Email: (optional)
+
+---
+
+## 📝 Notes
+- The project runs locally without hosting
+- Models are saved automatically after training
+- No manual dataset labeling required
